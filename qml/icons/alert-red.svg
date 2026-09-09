@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon/alert-red">
+<path id="Background" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E2231A"/>
+<path id="Octagon" d="M18.47 14.68L14.68 18.47H9.32L5.53 14.68V9.32L9.32 5.53H14.68L18.47 9.32V14.68Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+<path id="Bar" d="M12 9V13.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+<path id="Dot" d="M12 16.5H12.01" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

@@ -1,0 +1,66 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+
+class WifiController extends QObject {
+  - m_networks
+  - m_radioEnabled
+  - m_connectionState
+  - m_internetAvailable
+  - m_overallState
+
+  + scanNetworks()
+  + connectToNetwork(ssid, password)
+  + disconnect(ssid)
+
+  -- slots --
+  + networksChanged()
+  + radioEnabledChanged()
+  + connectionStateChanged()
+  + internetAvailableChanged()
+  + overallStateChanged()
+}
+
+class WifiService {
+  + scan()
+  + connect(ssid, password)
+  + disconnect(ssid)
+  + getRadioState()
+  + getConnectionState()
+  + getInternetState()
+}
+
+interface IWifiManager <<interface>> {
+  + scan()
+  + connect(ssid, password)
+  + disconnect(ssid)
+  + getRadioState()
+  + getConnectionState()
+  + getInternetState()
+}
+
+class WifiWindowsManager {
+  + scan()
+  + connect(ssid, password)
+  + disconnect(ssid)
+  + getRadioState()
+  + getConnectionState()
+  + getInternetState()
+}
+
+class WifiLinuxManager <<possible>>  {
+  + scan()
+  + connect(ssid, password)
+  + disconnect(ssid)
+  + getRadioState()
+  + getConnectionState()
+  + getInternetState()
+}
+
+WifiController ..> WifiService : uses
+WifiService ..> WifiLinuxManager : uses
+IWifiManager <|.. WifiLinuxManager : implements
+WifiService ..> WifiWindowsManager : uses
+IWifiManager <|.. WifiWindowsManager : implements
+
+@enduml
