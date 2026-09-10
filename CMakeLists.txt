@@ -8,18 +8,24 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup()
+qt_policy(SET QTP0001 NEW)
+qt_policy(SET QTP0004 NEW)
 
 # Temporary entry point for testing purposes
 qt_add_executable(WifiWindow
 	main.cpp
 )
 
-qt_add_qml_module(WifiWindow
+qt_add_qml_module(
+	WifiWindow
 	URI WifiWindow
 	VERSION 1.0
+	NO_CACHEGEN
 
 	QML_FILES
+	        qml/Main.qml
 		qml/WifiConfigScreen.qml
+
 		qml/components/Badge.qml
 		qml/components/Banner.qml
 		qml/components/Button.qml
@@ -27,6 +33,7 @@ qt_add_qml_module(WifiWindow
 		qml/components/ListItem.qml
 		qml/components/NetworkRow.qml
 		qml/components/StatusBadge.qml
+
 		qml/tokens/Colors.qml
 		qml/tokens/FontStyle.qml
 		qml/tokens/Spacing.qml
@@ -50,6 +57,16 @@ qt_add_qml_module(WifiWindow
 		qml/icons/status-check.svg
 		qml/icons/status-shield.svg
 		qml/icons/wifi.svg
+		qml/components/qmldir
+		qml/tokens/qmldir
+)
+
+set_source_files_properties(
+    qml/tokens/Colors.qml
+    qml/tokens/Spacing.qml
+    qml/tokens/Typography.qml
+    PROPERTIES
+        QT_QML_SINGLETON_TYPE TRUE
 )
 
 target_sources(WifiWindow PRIVATE
@@ -63,7 +80,7 @@ target_sources(WifiWindow PRIVATE
 )
 
 target_include_directories(WifiWindow PRIVATE
-	"${CMAKE_CURRENT_LIST_DIR}/../../../.."
+    "${CMAKE_CURRENT_LIST_DIR}/source_cpp"
 )
 
 target_link_libraries(WifiWindow PRIVATE

@@ -1,9 +1,12 @@
 pragma ComponentBehavior: Bound
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Window
-import "../tokens"
-import "../components"
+
+import "tokens"
+import "components"
+
 
 // Configuración de red WiFi — assembles the full screen from the component kit.
 //
@@ -246,7 +249,7 @@ Item {
                                             width: 15
                                             height: 15
                                             anchors.verticalCenter: parent.verticalCenter
-                                            source: "../icons/scan.svg"
+                                            source: "icons/scan.svg"
                                         }
 
                                         Text {
@@ -378,7 +381,7 @@ Item {
                                         model: root.networksModel
 
                                         delegate: NetworkRow {
-                                            required property var model
+                                            property var model
 
                                             Layout.fillWidth: true
                                             networkName: model.networkName
@@ -400,7 +403,7 @@ Item {
                                         label: "Otros..."
                                         showSecondaryText: false
                                         showChevron: true
-                                        icon: "../icons/network-default.svg"
+                                        icon: "icons/network-default.svg"
                                         hoverEnabled: false
                                     }
                                 }
@@ -425,7 +428,7 @@ Item {
                                     width: 13
                                     height: 13
                                     anchors.verticalCenter: parent.verticalCenter
-                                    source: "../icons/lock.svg"
+                                    source: "icons/lock.svg"
                                 }
 
                                 Text {
@@ -478,7 +481,7 @@ Item {
                                     Image {
                                         Layout.preferredWidth: 26
                                         Layout.preferredHeight: 26
-                                        source: "../icons/status-shield.svg"
+                                        source: "icons/status-shield.svg"
                                     }
 
                                     Text {

@@ -2,7 +2,7 @@
 
 #include <QObject>
 #include <QStringList>
-#include <socio-visual/QuickWidgets/WifiWindow/source_cpp/WiFiService.h>
+#include "WiFiService.h"
 
 class WifiController : public QObject
 {
@@ -92,6 +92,13 @@ public:
         m_overallState = "Disconnected";
     }
 
+signals:
+
+    void networksChanged();
+    void radioEnabledChanged();
+    void connectionStateChanged();
+    void internetAvailableChanged();
+    void overallStateChanged();
 
 private:
     QStringList m_networks;
