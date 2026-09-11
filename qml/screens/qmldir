@@ -1,0 +1,2 @@
+module WifiWindow.screens
+WifiConfigScreen 1.0 WifiConfigScreen.qml

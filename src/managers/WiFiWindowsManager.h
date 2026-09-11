@@ -1,11 +1,11 @@
 #pragma once
-#include "IWiFiManager.h"
+#include "interfaces/IWiFiManager.h"
 
 /**
- * WifiLinuxManager is a concrete implementation of IWifiManager
- * for managing WiFi connections on Linux systems.
+ * WifiWindowsManager is a concrete implementation of IWifiManager
+ * for managing WiFi connections on Windows systems.
  */
-class WifiLinuxManager : public IWiFiManager
+class WifiWindowsManager : public IWiFiManager
 {
 public:
 

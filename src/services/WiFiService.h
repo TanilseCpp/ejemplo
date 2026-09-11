@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IWiFiManager.h"
+#include "interfaces/IWiFiManager.h"
 #include <memory>
 #include <vector>
 

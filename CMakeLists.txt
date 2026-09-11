@@ -21,10 +21,11 @@ qt_add_qml_module(
 	URI WifiWindow
 	VERSION 1.0
 	NO_CACHEGEN
+	NO_GENERATE_QMLDIR
 
 	QML_FILES
 	        qml/Main.qml
-		qml/WifiConfigScreen.qml
+		qml/screens/WifiConfigScreen.qml
 
 		qml/components/Badge.qml
 		qml/components/Banner.qml
@@ -40,6 +41,10 @@ qt_add_qml_module(
 		qml/tokens/Typography.qml
 
 	RESOURCES
+		qml/qmldir
+		qml/tokens/qmldir
+		qml/components/qmldir
+		qml/screens/qmldir
 		qml/icons/alert-red.svg
 		qml/icons/alert-yellow.svg
 		qml/icons/checkmark-connected.svg
@@ -57,8 +62,15 @@ qt_add_qml_module(
 		qml/icons/status-check.svg
 		qml/icons/status-shield.svg
 		qml/icons/wifi.svg
-		qml/components/qmldir
-		qml/tokens/qmldir
+
+	SOURCES
+	    src/controllers/WifiController.h
+		src/interfaces/IWiFiManager.h
+		src/managers/MockWiFiManager.h
+		src/managers/WiFiLinuxManager.h
+		src/managers/WiFiWindowsManager.h
+		src/services/WiFiService.cpp
+		src/services/WiFiService.h
 )
 
 set_source_files_properties(
@@ -69,18 +81,8 @@ set_source_files_properties(
         QT_QML_SINGLETON_TYPE TRUE
 )
 
-target_sources(WifiWindow PRIVATE
-	source_cpp/WiFiService.cpp
-	source_cpp/WiFiService.h
-	source_cpp/IWiFiManager.h
-	source_cpp/MockWiFiManager.h
-	source_cpp/WiFiLinuxManager.h
-	source_cpp/WiFiWindowsManager.h
-	source_qml/WifiController.h
-)
-
 target_include_directories(WifiWindow PRIVATE
-    "${CMAKE_CURRENT_LIST_DIR}/source_cpp"
+    "${CMAKE_CURRENT_LIST_DIR}/src"
 )
 
 target_link_libraries(WifiWindow PRIVATE

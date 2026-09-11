@@ -11,7 +11,7 @@ Item {
     // NOTE: "state" is Item's own built-in property — assigned a default here,
     // not redeclared, so it stays a plain read/write string.
     state: "default"
-    property string networkName: "PRISMA_COFFEE_5G"
+    required property string networkName
 
     signal connected(string networkName, string password)
     signal cancelled()

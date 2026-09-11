@@ -2,7 +2,7 @@
 
 #include <QObject>
 #include <QStringList>
-#include "WiFiService.h"
+#include "services/WiFiService.h"
 
 class WifiController : public QObject
 {

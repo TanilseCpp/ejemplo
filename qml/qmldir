@@ -1,0 +1,14 @@
+module WifiWindow
+Main 1.0 Main.qml
+WifiConfigScreen 1.0 screens/WifiConfigScreen.qml
+Badge 1.0 components/Badge.qml
+Banner 1.0 components/Banner.qml
+Button 1.0 components/Button.qml
+Input 1.0 components/Input.qml
+ListItem 1.0 components/ListItem.qml
+NetworkRow 1.0 components/NetworkRow.qml
+StatusBadge 1.0 components/StatusBadge.qml
+singleton Colors 1.0 tokens/Colors.qml
+FontStyle 1.0 tokens/FontStyle.qml
+singleton Spacing 1.0 tokens/Spacing.qml
+singleton Typography 1.0 tokens/Typography.qml

@@ -1,9 +1,8 @@
-module Components
-
-Button 1.0 Button.qml
-Input 1.0 Input.qml
+module WifiWindow.components
 Badge 1.0 Badge.qml
 Banner 1.0 Banner.qml
-StatusBadge 1.0 StatusBadge.qml
+Button 1.0 Button.qml
+Input 1.0 Input.qml
 ListItem 1.0 ListItem.qml
 NetworkRow 1.0 NetworkRow.qml
+StatusBadge 1.0 StatusBadge.qml

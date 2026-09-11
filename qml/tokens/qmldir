@@ -1,6 +1,5 @@
-module Tokens
-
+module WifiWindow.tokens
 singleton Colors 1.0 Colors.qml
-singleton Typography 1.0 Typography.qml
-singleton Spacing 1.0 Spacing.qml
 FontStyle 1.0 FontStyle.qml
+singleton Spacing 1.0 Spacing.qml
+singleton Typography 1.0 Typography.qml
